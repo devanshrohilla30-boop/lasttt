@@ -28,3 +28,10 @@ button {
     transform: scale(1.05);
     transition: 0.3s;
 }
+.card {
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
