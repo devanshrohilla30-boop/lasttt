@@ -24,3 +24,7 @@ button {
 .btn-success {
     margin-right: 5px;
 }
+.card:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
