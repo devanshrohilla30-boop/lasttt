@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Attendance App</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">📊 Smart Attendance Dashboard</h2>
+
+    <!-- Dashboard -->
+    <div class="row text-center mb-4">
+        <div class="col">
+            <div class="card p-3 shadow">
+                👨‍🎓 Students: <span id="totalStudents">0</span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card p-3 shadow">
+                📅 Classes: <span id="totalClasses">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Student -->
+    <div class="card p-3 mb-3 shadow">
+        <input id="name" class="form-control mb-2" placeholder="Name">
+        <input id="roll" class="form-control mb-2" placeholder="Roll No">
+        <button class="btn btn-primary" onclick="addStudent()">➕ Add Student</button>
+    </div>
+
+    <!-- Search -->
+    <input id="search" class="form-control mb-3" placeholder="🔍 Search..." onkeyup="searchStudent()">
+
+    <!-- Table -->
+    <table class="table table-striped shadow">
+        <thead class="table-dark">
+            <tr>
+                <th>Name</th>
+                <th>Roll</th>
+                <th>Attendance</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="studentTable"></tbody>
+    </table>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
