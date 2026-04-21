@@ -57,9 +57,14 @@ function displayStudents(list = students) {
         <tr>
             <td>${s.name}</td>
             <td>${s.roll}</td>
-            <td>
-                ${s.present}/${s.total} (${getPercentage(s.present, s.total)})
-            </td>
+           <td>
+    ${s.present}/${s.total} (${getPercentage(s.present, s.total)})
+    <div class="progress mt-2">
+        <div class="progress-bar bg-success" 
+        style="width:${getPercentage(s.present, s.total)}">
+        </div>
+    </div>
+</td>
             <td>
                 <button class="btn btn-success btn-sm" onclick="markAttendance(${i}, true)">
                     <i class="fa fa-check"></i>
