@@ -48,6 +48,13 @@ function getPercentage(p, t) {
     return ((p / t) * 100).toFixed(1) + "%";
 }
 
+function getColor(p, t) {
+    let percent = (p / t) * 100;
+    if (percent >= 75) return "bg-success";
+    if (percent >= 50) return "bg-warning";
+    return "bg-danger";
+}
+
 function displayStudents(list = students) {
     let table = document.getElementById("studentTable");
     table.innerHTML = "";
@@ -57,14 +64,15 @@ function displayStudents(list = students) {
         <tr>
             <td>${s.name}</td>
             <td>${s.roll}</td>
-           <td>
-    ${s.present}/${s.total} (${getPercentage(s.present, s.total)})
-    <div class="progress mt-2">
-        <div class="progress-bar bg-success" 
-        style="width:${getPercentage(s.present, s.total)}">
-        </div>
-    </div>
-</td>
+            <td>
+                ${s.present}/${s.total} (${getPercentage(s.present, s.total)})
+                <div class="progress mt-2">
+                    <div class="progress-bar ${getColor(s.present, s.total)}"
+                         role="progressbar"
+                         style="width:${getPercentage(s.present, s.total)}">
+                    </div>
+                </div>
+            </td>
             <td>
                 <button class="btn btn-success btn-sm" onclick="markAttendance(${i}, true)">
                     <i class="fa fa-check"></i>
